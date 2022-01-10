@@ -1,10 +1,17 @@
 #include <stdio.h>
 
+#define CLEAR printf("\e[1;1H\e[2J"); //* Clears screen
+
 int main() {
 	//* Choice 1, 2, 3
 	int ch1;
 	int ch2;
 	int ch3;
+	int ch4;
+
+	//* Centimeters and inches
+	float cm = 0.0;
+	float in = 0.0;
 
 	//* Celsius and fahrenheit
 	float cel = 0.0;
@@ -15,78 +22,118 @@ int main() {
 	float mps = 0.0;
 	float mph = 0.0;
 
-	printf("Danny\'s converting tool\n");
-	printf("\nChoose converter\n1. Speed\n2. Temperature\n> ");
+	CLEAR
+	printf("Daniel\'s converting tool\n");
+	printf("\nChoose converter\n1. Speed\n2. Temperature\n3. Length\n> ");
 	scanf("%d", &ch1);
 
 	if (ch1 == 1) {
+		CLEAR
+		printf("___SPEED___\n\n");
 		printf(
-			"\n1. m/s to km/h\n2. km/h to m/s\n3. mp/h to km/h\n4. mp/h to m/s\n> "
+			"1. m/s to km/h\n2. km/h to m/s\n3. mp/h to km/h\n4. mp/h to m/s\n> "
 		);
 		scanf("%d", &ch2);
 
-		if (ch2 == 1) {
+		if (ch2 == 1) {					//! Convert meters/s to kilometers/h
+			CLEAR
+			printf("meters/s to kilometers/h\n\n");
 			printf("m/s: ");
 			scanf("%f", &mps);
 
 			kmph = mps * 3.6;
-
-			printf("%.2f m/s = %.2f km/h\n\n", mps, kmph);
+			printf("\n%.2f m/s = %.2f km/h\n\n", mps, kmph); //* Prints the result
 		}
-		else if (ch2 == 2) {
+		else if (ch2 == 2) {			//! Convert kilometers/h to meters/s
+			CLEAR
+			printf("kilometers/h to meters/s\n\n");
 			printf("km/h: ");
 			scanf("%f", &kmph);
 
 			mps = kmph / 3.6;
 			
-			printf("%.2f km/h = %.2f m/s\n\n", kmph, mps);
+			printf("\n%.2f km/h = %.2f m/s\n\n", kmph, mps); //* Prints the result
 		}
-		else if (ch2 == 3) {
+		else if (ch2 == 3) {			//! Convert miles/h to kilometers/h
+			CLEAR
+			printf("miles/h to kilometers/h\n\n");
 			printf("mph: ");
 			scanf("%f", &mph);
 
 			kmph = mph * 1.61;
-
-			printf("%.2f mph = %.2f km/h\n\n", mph, kmph);
+			printf("\n%.2f mph = %.2f km/h\n\n", mph, kmph); //* Prints the result
 		}
-		else if (ch2 == 4) {
+		else if (ch2 == 4) {			//! Convert miles/h to meters/s
+			CLEAR
+			printf("miles/h to meters/s\n\n");
 			printf("mph: ");
 			scanf("%f", &mph);
 
 			mps = (mph * 1.61) / 3.6;
-
-			printf("%.2f mph = %.2f m/s\n\n", mph, mps);
+			printf("\n%.2f mph = %.2f m/s\n\n", mph, mps); //* Prints the result
 		}
 		else {
-			printf("Invalid input!\n");
+			printf("\nInvalid input!\n");
 		}
 	}
 	else if (ch1 == 2) {
-		printf("\n1. Celsius to Fahrenheit\n2. Fahrenheit to Celsius\n> ");
+		CLEAR
+		printf("___TEMPERATURE___\n\n");
+		printf("1. Celsius to Fahrenheit\n2. Fahrenheit to Celsius\n> ");
 		scanf("%d", &ch3);
 
-		if (ch3 == 1) {
+		if (ch3 == 1) {					//! Convert celsius to fahrenheit
+			CLEAR
+			printf("celsius to fahrenheit\n\n");
 			printf("Degrees (C): ");
 			scanf("%f", &cel);
 
 			fah = cel * 1.8 + 32;
-
-			printf("\n%.2f C = %.2f F", cel, fah);
+			printf("\n%.2f C = %.2f F\n\n", cel, fah); //* Prints the result
 		}
-		else if (ch3 == 2) {
+		else if (ch3 == 2) {			//! Convert fahrenheit to celsius
+			CLEAR
+			printf("fahrenheit to celsius\n\n");
 			printf("Degrees (F): ");
 			scanf("%f", &fah);
 
 			cel = (fah - 32) * 0.5556;
-
-			printf("\n%.2f F = %.2f C", fah, cel);
+			printf("\n%.2f F = %.2f C\n\n", fah, cel); //* Prints the result
 		}
 		else {
-			printf("Invalid input!");
+			printf("\nInvalid input!\n");
+		}
+	}
+	else if (ch1 == 3) {
+		CLEAR
+		printf("___LENGTH___\n\n");
+		printf("1. cm to in\n2. in to cm\n> ");
+		scanf("%d", &ch4);
+
+		if (ch4 == 1) {					//! Convert cm to inches
+			CLEAR
+			printf("cm to inches\n\n");
+			printf("cm: ");
+			scanf("%f", &cm);
+
+			in = cm * 0.393700787;
+			printf("\n%.2f cm = %.2f in\n\n", cm, in); //* Prints the result
+		}
+		else if (ch4 == 2) {			//! Convert inches to cm
+			CLEAR
+			printf("inches to cm\n\n");
+			printf("in: ");
+			scanf("%f", &in);
+
+			cm = in * 2.54;
+			printf("\n%.2f in = %.2f cm\n\n", in, cm); //* Prints the result
+		}
+		else {
+			printf("\nInvalid input!\n");
 		}
 	}
 	else {
-		printf("\nInvalid input!");
+		printf("\nInvalid input!\n"); //* Prints error
 	}
 	
 	return 0;
