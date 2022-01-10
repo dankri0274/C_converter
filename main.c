@@ -6,8 +6,6 @@ int main() {
 	//* Choice 1, 2, 3
 	int ch1;
 	int ch2;
-	int ch3;
-	int ch4;
 
 	//* Centimeters and inches
 	float cm = 0.0;
@@ -23,6 +21,7 @@ int main() {
 	float mph = 0.0;
 
 	CLEAR
+
 	printf("Daniel\'s converting tool\n");
 	printf("\nChoose converter\n1. Speed\n2. Temperature\n3. Length\n> ");
 	scanf("%d", &ch1);
@@ -37,6 +36,7 @@ int main() {
 
 		if (ch2 == 1) {					//! Convert meters/s to kilometers/h
 			CLEAR
+
 			printf("meters/s to kilometers/h\n\n");
 			printf("m/s: ");
 			scanf("%f", &mps);
@@ -46,6 +46,7 @@ int main() {
 		}
 		else if (ch2 == 2) {			//! Convert kilometers/h to meters/s
 			CLEAR
+
 			printf("kilometers/h to meters/s\n\n");
 			printf("km/h: ");
 			scanf("%f", &kmph);
@@ -56,6 +57,7 @@ int main() {
 		}
 		else if (ch2 == 3) {			//! Convert miles/h to kilometers/h
 			CLEAR
+
 			printf("miles/h to kilometers/h\n\n");
 			printf("mph: ");
 			scanf("%f", &mph);
@@ -65,6 +67,7 @@ int main() {
 		}
 		else if (ch2 == 4) {			//! Convert miles/h to meters/s
 			CLEAR
+
 			printf("miles/h to meters/s\n\n");
 			printf("mph: ");
 			scanf("%f", &mph);
@@ -78,12 +81,14 @@ int main() {
 	}
 	else if (ch1 == 2) {
 		CLEAR
+
 		printf("___TEMPERATURE___\n\n");
 		printf("1. Celsius to Fahrenheit\n2. Fahrenheit to Celsius\n> ");
-		scanf("%d", &ch3);
+		scanf("%d", &ch2);
 
-		if (ch3 == 1) {					//! Convert celsius to fahrenheit
+		if (ch2 == 1) {					//! Convert celsius to fahrenheit
 			CLEAR
+
 			printf("celsius to fahrenheit\n\n");
 			printf("Degrees (C): ");
 			scanf("%f", &cel);
@@ -91,8 +96,9 @@ int main() {
 			fah = cel * 1.8 + 32;
 			printf("\n%.2f C = %.2f F\n\n", cel, fah); //* Prints the result
 		}
-		else if (ch3 == 2) {			//! Convert fahrenheit to celsius
+		else if (ch2 == 2) {			//! Convert fahrenheit to celsius
 			CLEAR
+
 			printf("fahrenheit to celsius\n\n");
 			printf("Degrees (F): ");
 			scanf("%f", &fah);
@@ -106,12 +112,14 @@ int main() {
 	}
 	else if (ch1 == 3) {
 		CLEAR
+
 		printf("___LENGTH___\n\n");
 		printf("1. cm to in\n2. in to cm\n> ");
-		scanf("%d", &ch4);
+		scanf("%d", &ch2);
 
-		if (ch4 == 1) {					//! Convert cm to inches
+		if (ch2 == 1) {					//! Convert cm to inches
 			CLEAR
+
 			printf("cm to inches\n\n");
 			printf("cm: ");
 			scanf("%f", &cm);
@@ -119,8 +127,9 @@ int main() {
 			in = cm * 0.393700787;
 			printf("\n%.2f cm = %.2f in\n\n", cm, in); //* Prints the result
 		}
-		else if (ch4 == 2) {			//! Convert inches to cm
+		else if (ch2 == 2) {			//! Convert inches to cm
 			CLEAR
+			
 			printf("inches to cm\n\n");
 			printf("in: ");
 			scanf("%f", &in);
