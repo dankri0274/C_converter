@@ -30,7 +30,7 @@ int main() {
 		CLEAR
 		printf("___SPEED___\n\n");
 		printf(
-			"1. m/s to km/h\n2. km/h to m/s\n3. mp/h to km/h\n4. mp/h to m/s\n> "
+			"1. m/s to km/h\n2. km/h to m/s\n3. mph to km/h\n4. mph to m/s\n5. km/h to mph\n> "
 		);
 		scanf("%d", &ch2);
 
@@ -74,6 +74,16 @@ int main() {
 
 			mps = (mph * 1.61) / 3.6;
 			printf("\n%.2f mph = %.2f m/s\n\n", mph, mps); //* Prints the result
+		}
+		else if (ch2 == 5) {
+			CLEAR
+
+			printf("kilometers/h to miles/h\n\n");
+			printf("km/h: ");
+			scanf("%f", &kmph);
+
+			mph = kmph * 0.621371192;
+			printf("%.2f km/h = %.2f mph", kmph, mph);
 		}
 		else {
 			printf("\nInvalid input!\n");
@@ -129,7 +139,7 @@ int main() {
 		}
 		else if (ch2 == 2) {			//! Convert inches to cm
 			CLEAR
-			
+
 			printf("inches to cm\n\n");
 			printf("in: ");
 			scanf("%f", &in);
